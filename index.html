@@ -8,7 +8,7 @@
     <!-- fakicon -->
     <link rel="icon" href="" />
     <!-- css -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <!-- header -->
@@ -18,9 +18,11 @@
         <div class="nav-center">
           <!-- toggle and logo -->
           <div class="nav-header">
-            <button class="nav-toggle">
-              <div class="hamburger-menu-line"></div>
-            </button>
+            <div class="nav-toggle">
+              <div class="burger-menu start-line"></div>
+              <div class="burger-menu"></div>
+              <div class="burger-menu end-line"></div>
+            </div>
             <img class="icon" src="./images/logo-small.svg" alt="logo" />
           </div>
           <!-- links -->
@@ -35,11 +37,13 @@
           </div>
           <!-- shopping bag -->
           <div class="shopping-bag">
-            <img
-              class="icon"
-              src="./images/shopping-bag.svg"
-              alt="shopping bag"
-            />
+            <a href="https://www.oursong.com/@yagiyou0701">
+              <img
+                class="icon"
+                src="./images/shopping-bag.svg"
+                alt="shopping bag"
+              />
+            </a>
             <div class="shopping-bag-tips">NFT賣場</div>
           </div>
         </div>
@@ -50,4 +54,6 @@
       </div>
     </header>
   </body>
+  <!-- javascript -->
+  <script type="module" src="src/index.js"></script>
 </html>
