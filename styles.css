@@ -93,30 +93,28 @@ nav header
 /* navbar */
 nav {
   background: var(--clr-primary-light);
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.5rem;
 }
 .nav-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-.links li {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+.logo {
+  animation: bounce 2s ease infinite;
 }
-.links li:hover a {
-  color: var(--clr-primary-white);
-}
-.links-container {
-  height: 0;
-  overflow: hidden;
-  transition: var(--transition-linear);
-}
+
 /* nav-toggle */
 .nav-toggle {
   width: 30px;
@@ -154,13 +152,7 @@ nav {
 .switch-icon .burger-menu.end-line {
   transform: rotate(-90deg) translate(2px, -8px);
 }
-/* .switch-icon {
-  visibility: visible;
-  z-index: 100;
-} */
-
 /* shopping bag */
-
 .shopping-bag {
   width: 30px;
   position: relative;
@@ -175,6 +167,7 @@ nav {
 .shopping-bag:hover a {
   opacity: 1;
   filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
+  transform: translateY(-0.2rem);
 }
 .shopping-bag-tips {
   width: max-content;
@@ -196,9 +189,59 @@ nav {
   border: 5px solid transparent;
   border-bottom-color: var(--clr-primary);
   left: 50%;
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, -140%);
 }
 .shopping-bag:hover .shopping-bag-tips {
   top: 33px;
   opacity: 1;
+}
+/* links */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.links li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.links li a {
+  transition: var(--transition-ease-in);
+}
+.links li:hover a {
+  color: var(--clr-primary-white);
+}
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition-linear);
+}
+@media screen and (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-header {
+    display: contents;
+  }
+  .shopping-bag {
+    order: 2;
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .links-container {
+    height: auto !important;
+    width: 100%;
+  }
+  .links li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
