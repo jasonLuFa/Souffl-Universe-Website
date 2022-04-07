@@ -29,11 +29,14 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
+ul {
+  list-style-type: none;
+}
 a {
   text-decoration: none;
   color: var(--clr-primary);
 }
-img:not(.icon) {
+img {
   display: block;
   width: 100%;
 }
@@ -87,6 +90,34 @@ p {
 nav header
 ===============
 */
+/* navbar */
+nav {
+  background: var(--clr-primary-light);
+  padding: 1rem 1.5rem;
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.links li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.links li:hover a {
+  color: var(--clr-primary-white);
+}
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition-linear);
+}
+/* nav-toggle */
 .nav-toggle {
   width: 30px;
   height: 30px;
@@ -113,24 +144,25 @@ nav header
   align-self: end;
   transition: var(--transition-cubic-1);
 }
-/* click animation */
-.nav-toggle.show-links {
+/* nav-toggle click animation */
+.nav-toggle.switch-icon {
   transform: rotate(-45deg);
 }
-.show-links .burger-menu.start-line {
+.switch-icon .burger-menu.start-line {
   transform: rotate(-90deg) translate(-2px, 7px);
 }
-.show-links .burger-menu.end-line {
+.switch-icon .burger-menu.end-line {
   transform: rotate(-90deg) translate(2px, -8px);
 }
-/* .show-links {
+/* .switch-icon {
   visibility: visible;
   z-index: 100;
 } */
 
 /* shopping bag */
+
 .shopping-bag {
-  width: 4rem;
+  width: 30px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -142,9 +174,10 @@ nav header
 }
 .shopping-bag:hover a {
   opacity: 1;
-  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
 }
 .shopping-bag-tips {
+  width: max-content;
   position: absolute;
   padding: 0.3rem;
   background: var(--clr-primary);
@@ -160,12 +193,10 @@ nav header
 .shopping-bag-tips::before {
   position: absolute;
   content: '';
-  height: 8px;
-  width: 8px;
-  background: var(--clr-primary);
-  top: -4px;
+  border: 5px solid transparent;
+  border-bottom-color: var(--clr-primary);
   left: 50%;
-  transform: translateX(-50%) rotate(45deg);
+  transform: translate(-50%, -150%);
 }
 .shopping-bag:hover .shopping-bag-tips {
   top: 33px;
