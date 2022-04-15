@@ -93,7 +93,11 @@ nav header
 /* navbar */
 nav {
   background: var(--clr-primary-light);
+  opacity: 0.8;
   padding: 1.2rem 1.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 .nav-header {
   display: flex;
@@ -243,7 +247,132 @@ nav {
     width: 100%;
   }
   .links li {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 0 1rem;
   }
 }
+/*
+=============== 
+banner
+===============
+*/
+.banner {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 3fr 2fr 1fr;
+  background: linear-gradient(
+    0deg,
+    rgba(144, 79, 35, 1) 19%,
+    rgba(211, 176, 151, 1) 56%,
+    rgba(255, 247, 239, 1) 100%
+  );
+}
+/* decorate container */
+.decorate-container {
+  grid-column: 1;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+.strawberry-container {
+  max-width: 10rem;
+  min-width: 8rem;
+  transform: translate(-2.8rem, 11rem);
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+.chocolate-container {
+  max-width: 20rem;
+  min-width: 16rem;
+  transform: translate(-2.5rem, 0);
+  grid-column: 2 /5;
+  grid-row: 1;
+}
+.milk-container {
+  max-width: 15rem;
+  min-width: 11rem;
+  transform: translate(-2rem, 8rem);
+  grid-column: 4 /6;
+  grid-row: 1;
+}
+@media screen and (min-width: 576px) {
+  .decorate-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .strawberry-container {
+    width: 13rem;
+    max-width: 20rem;
+  }
+  .milk-container {
+    max-width: 20rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .strawberry-container {
+    width: 19rem;
+  }
+  .chocolate-container {
+    width: 25rem;
+    max-width: 25rem;
+  }
+  .milk-container {
+    width: 23rem;
+    max-width: 24rem;
+    transform: translate(-2rem, 5rem);
+  }
+}
+
+/* universe container */
+.universe-container {
+  grid-column: 1;
+  grid-row: 2/4;
+  display: grid;
+  align-items: center;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+/* -- souffles */
+.souffle-container {
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+.matcha-souffle-container {
+  position: absolute;
+  transform: rotate(-20deg) translate(-20%, -170%);
+}
+
+.origin-souffle-container {
+  min-width: 16rem;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -80%);
+  z-index: 999;
+}
+.chocolate-souffle-container {
+  position: absolute;
+  transform: rotate(20deg) translate(20%, -150%);
+}
+/*  banner title */
+.banner-title {
+  width: 15rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -20%);
+}
+/*  planet container */
+.planet-container {
+  width: 800px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+/* souffle-universe 和 decorate-container 看是怎麼排版的 */

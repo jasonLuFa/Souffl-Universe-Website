@@ -22,8 +22,7 @@ function toggleNavbar() {
 }
 
 function isNavbarClose() {
-  const linksContainerHeight = linksContainer.getBoundingClientRect().height;
-  return linksContainerHeight === 0;
+  return linksContainer.getBoundingClientRect().height === 0;
 }
 
 function openNavbar() {
